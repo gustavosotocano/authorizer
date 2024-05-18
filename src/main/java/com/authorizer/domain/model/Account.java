@@ -14,5 +14,8 @@ import java.util.List;
 public class Account implements  Authorizer{
   private AccountDetail account;
   private List<String> violations = new ArrayList<>();
-  
+
+  public Account(AccountDetail account) {
+    this.account = account;
+  }
 }

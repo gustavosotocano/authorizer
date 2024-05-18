@@ -18,7 +18,7 @@ public class AccountDetail{
     @JsonProperty("active-card")
     private Boolean activeCard;
     @JsonProperty("available-limit")
-    private int availableLimit;
+    private Integer availableLimit;
 
 
 

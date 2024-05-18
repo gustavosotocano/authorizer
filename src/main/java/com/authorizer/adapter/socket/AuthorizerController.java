@@ -125,7 +125,7 @@ public class AuthorizerController {
       if (json.contains("account")) {
         authorizer = obj.readValue(json, Account.class);
         Account acc = (Account) authorizer;
-        if (null == acc.getAccount().isActiveCard() || null == acc.getAccount().getAvailableLimit()) {
+        if (null == acc.getAccount().getActiveCard() || null == acc.getAccount().getAvailableLimit()) {
           throw new IOException("error in mapper");
         }
       } else if (json.contains("transaction")) {

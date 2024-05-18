@@ -47,7 +47,7 @@ public class TransactionServiceImplementation implements TransactionService {
       return account;
     }
     account.getViolations().clear();
-    if (!account.getAccount().isActiveCard()) {
+    if (!account.getAccount().getActiveCard() ) {
       account.getViolations().add("card-not-active");
     }
     final List<Validation> conditions = new ArrayList<>();
@@ -63,7 +63,7 @@ public class TransactionServiceImplementation implements TransactionService {
       }
     }
 
-    if (account.getViolations().size() > 0) {
+    if (!account.getViolations().isEmpty()) {
       return account;
     }
     account = accountRepository.updateAvailableLimit(transaction);
@@ -83,6 +83,6 @@ public class TransactionServiceImplementation implements TransactionService {
   transactionRepository.remove();
   }
 
-  ;
+
 
 }
